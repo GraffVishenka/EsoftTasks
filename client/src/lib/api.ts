@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const API_URL = `https://esoft-tasks-server.vercel.app:7777`
+export const API_URL = `https://esoft-tasks-server.vercel.app`
 
 export const $api = axios.create({
   withCredentials:true,
