@@ -10,7 +10,7 @@ async function bootstrap() {
 
   app.enableCors({
     credentials: true,
-    origin: true,
+    origin: "https://esoft-tasks.vercel.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
     allowedHeaders:"Content-Type"
   });
