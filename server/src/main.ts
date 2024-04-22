@@ -4,11 +4,15 @@ import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import * as cookieParser from "cookie-parser";
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, {cors: false});
+  const app = await NestFactory.create(AppModule, { cors: false });
 
   app.use(cookieParser());
 
-  app.enableCors({ credentials: true, origin: process.env.CLIENT_URL });
+  app.enableCors({
+    credentials: true,
+    origin: process.env.CLIENT_URL,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+  });
 
   const config = new DocumentBuilder()
     .setTitle("TaskManager")
