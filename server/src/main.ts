@@ -2,21 +2,17 @@ import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import * as cookieParser from "cookie-parser";
-import { NextFunction, Request, Response } from 'express';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: false });
 
   app.use(cookieParser());
-  app.use(function (request: Request, response: Response, next: NextFunction) {
-    response.setHeader('Access-Control-Allow-Origin', 'https://esoft-tasks.vercel.app');
-    next();
-  });
 
   app.enableCors({
     credentials: true,
     origin: true,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+    allowedHeaders:"Content-Type"
   });
 
   const config = new DocumentBuilder()
