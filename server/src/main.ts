@@ -11,8 +11,6 @@ async function bootstrap() {
   app.enableCors({
     credentials: true,
     origin: "https://esoft-tasks.vercel.app",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-    allowedHeaders:"Content-Type"
   });
 
   const config = new DocumentBuilder()
