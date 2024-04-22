@@ -8,7 +8,7 @@ async function bootstrap() {
     cors: {
       credentials: true,
       origin:
-        "https://esoft-tasks-km12vr65z-graffvishenkas-projects.vercel.app",
+        "https://esoft-tasks.vercel.app",
     },
   });
 
