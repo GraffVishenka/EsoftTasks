@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const API_URL = `https://taskserveresoft.netlify.app`
+export const API_URL = `https://esoftserver.onrender.com`
 
 export const $api = axios.create({
   withCredentials:true,
